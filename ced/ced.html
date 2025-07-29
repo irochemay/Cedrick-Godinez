@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="ced.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><button class="nav-btn active" data-target="about">About Me</button></li>
+        <li><button class="nav-btn" data-target="resume">Resume</button></li>
+        <li><button class="nav-btn" data-target="projects">Projects</button></li>
+        <li><button class="nav-btn" data-target="contact">Contact</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="content-section active">
+      <div class="profile-photo">
+        <img src="475680584_1027235792797328_4332830209451037456_n.jpg" alt="Fake Photo" />
+      </div>
+      <h1>Hello, I'm Your Name</h1>
+      <p>Welcome to my personal portfolio! I am a passionate coder and developer with interests in web development, design, and technology.</p>
+    </section>
+
+    
+    <section id="resume" class="content-section">
+      <h2>Resume</h2>
+      <div class="resume-section">
+        <h3>Education</h3>
+        <ul>
+          <li>Bachelor of Science in Computer Science -  Cordova Public College </li>
+          <li> Cordova National High SChool </li>
+          <li>Day-as Elementary School</li>
+        </ul>
+      </div>
+      <div class="resume-section">
+        <h3>Skills</h3>
+        <ul>
+          <li>HTML, CSS, </li>
+          <li>Essay Writing</li>
+          <li>Python, Java</li>
+        </ul>
+      </div>
+      <div class="resume-section">
+        <h3>Work Experience</h3>
+        <ul>
+          <li>Intern Developer, ABC Company (Summer 2024)</li>
+          <li>Freelance Web Developer (2023 - Present)</li>
+        </ul>
+      </div>
+      <div class="resume-section">
+        <h3>Projects</h3>
+        <ul>
+          <li>Project A - A web app for task management</li>
+          <li>Project B - Portfolio website with dynamic navigation</li>
+          <li>Project C - Chat application using websockets</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <article class="project-item">
+          <h3>Project A</h3>
+          <p>A task management web application with user authentication and real-time updates.</p>
+        </article>
+        <article class="project-item">
+          <h3>Project B</h3>
+          <p>Personal portfolio website with dynamic multi-section navigation and responsive design.</p>
+        </article>
+        <article class="project-item">
+          <h3>Project C</h3>
+          <p>Real-time chat application built with websockets and Node.js backend.</p>
+        </article>
+      </div>
+    </section>
+
+    
+    <section id="contact" class="content-section">
+      <h2>Contact Me</h2>
+      <form id="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" placeholder="Your Name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="Your Email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+   
+    const buttons = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('.content-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+       
+        buttons.forEach(b => b.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+       
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
